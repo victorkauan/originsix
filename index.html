@@ -1,0 +1,70 @@
+<!-- Toda página precisa de um índice (arquivo primáro), por isso, o nome do arquivo é "index.html" -->
+<!DOCTYPE html>
+<!-- Define o documento como um HTML5, versão mais moderna -->
+<html lang="pt_BR">
+  <!-- A propriedade "lang" da tag root ("raiz"), início do documento, determina o idioma do arquivo HTML -->
+  <head>
+    <!-- PAGE INFO -->
+    <!-- Informações da própria página, metaconfigurações -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Define que a largura do viewport recebe a largura do dispositivo, além de manter a escala de 1.0, assim tornando o documento flexível para qualquer dispositivo  -->
+    <!-- Viewport é a tela visível baseada na largura e altura de um dispositivo -->
+    <title>OriginSix</title>
+    <!-- Título da janela -->
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- A propriedade "rel" indica o relacionamento da referência, "href", com o link -->
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- "preconnect" indica que a conexão com a referência vai ser realizada durante o carregamento da página -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Conteúdo visível (corpo) da página, comentários não são aparentes -->
+    <header id="header">
+      <!-- ID é um identificador único -->
+      <nav class="container">
+        <!-- Dentro de uma barra de navegação, "nav", estão localizados os elementos clicáveis  -->
+        <a class="logo" href="#">beauty<span>salon</span>.</a>
+        <!-- É possível possuir mais de um elemento com a mesma classe, diferente do ID -->
+        <div class="menu">...</div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section" id="home">
+        <!-- Uma dica de acessibilidade é descrever as imagens adicionadas na propriedade "alt" -->
+        <!-- Algumas tags HTML não possuem tag de fechamento por não possuírem conteúdo, apenas atributos. Elas fecham nelas mesmas, como no caso de "img" -->
+        <div class="container grid">
+          <!-- Para adicionar novas classes é preciso adicionar o nome dela separado por espaços -->
+          <div class="image">
+            <img
+              src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+              alt="Cabeleireira sorrindo penteando o cabelo de uma cliente"
+            />
+          </div>
+          <div class="text">
+            <h1>Saúde natural para os seus cabelos</h1>
+            <p>
+              Um salão exclusivo em São Paulo, especializado em tratamentos
+              naturais.
+            </p>
+            <a class="button" href="#">Agendar um horário</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+
+      <section class="section">
+        <div class="container">Outra section</div>
+      </section>
+    </main>
+  </body>
+</html>
