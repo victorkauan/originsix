@@ -29,11 +29,23 @@
     <!-- Conteúdo visível (corpo) da página, comentários não são aparentes -->
     <header id="header">
       <!-- ID é um identificador único -->
-      <nav class="container">
+      <nav class="container show">
         <!-- Dentro de uma barra de navegação, "nav", estão localizados os elementos clicáveis  -->
         <a class="logo" href="#">beauty<span>salon</span>.</a>
         <!-- É possível possuir mais de um elemento com a mesma classe, diferente do ID -->
-        <div class="menu">...</div>
+        <div class="menu">
+          <ul class="grid">
+            <!-- Lista não ordenada -->
+            <!-- Items da lista, cada "li" corresponde a um item -->
+            <li><a class="title" href="#home">Início</a></li>
+            <li><a class="title" href="#about">Sobre</a></li>
+            <li><a class="title" href="#services">Serviços</a></li>
+            <li><a class="title" href="#testimonials">Depoimentos</a></li>
+            <li><a class="title" href="#contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="open">...</div>
+        <div class="close">x</div>
       </nav>
     </header>
 
@@ -50,7 +62,7 @@
             />
           </div>
           <div class="text">
-            <h1>Saúde natural para os seus cabelos</h1>
+            <h2 class="title">Saúde natural para os seus cabelos</h2>
             <p>
               Um salão exclusivo em São Paulo, especializado em tratamentos
               naturais.
@@ -62,8 +74,12 @@
 
       <div class="divider-1"></div>
 
-      <section class="section">
-        <div class="container">Outra section</div>
+      <section class="section" id="about">
+        <div class="container grid">Sobre</div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container grid">Serviços</div>
       </section>
     </main>
   </body>

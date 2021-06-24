@@ -5,7 +5,7 @@
  - hsl = Matiz, saturação and luminosidade;
  - hsla = Matiz, saturação, luminosidade e alfa;
  - red, green, blue = Nomes de cores.
-*/
+ */
 
 /* ============= RESET ============= */
 * {
@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 /* "*" é o seletor universal */
+
+ul {
+  list-style: none;
+}
 
 a {
   text-decoration: none; /* Remove as linhas presentes nos links */
@@ -48,7 +52,7 @@ body {
   -webkit-font-smoothing: antialiased; /* Propriedades com vendor prefixes apenas são aplicadas em navegadores compatíveis */
 } /* Para acessar o valor de uma variável é preciso colocar "var" seguido do nome da variável entre parênteses */
 
-h1 {
+.title {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
@@ -107,14 +111,11 @@ h1 {
   width: 100%;
 }
 
-nav {
-  height: var(--header-height);
-  display: flex;
-  align-items: center; /* Define o alinhamento horizontal */
-  justify-content: space-between; /* Define o alinhamento vertical */
-  width: 100%;
+main {
+  margin-top: calc(var(--header-height) + 2rem);
 }
 
+/* ============= LOGO ============= */
 .logo {
   font: 700 1.3125rem 'Poppins', sans-serif;
   color: var(--title-color);
@@ -124,8 +125,70 @@ nav {
   color: var(--base-color);
 }
 
-main {
-  margin-top: var(--header-height);
+/* ============= NAVIGATION ============= */
+nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center; /* Define o alinhamento horizontal */
+  justify-content: space-between; /* Define o alinhamento vertical */
+  width: 100%;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.2s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--base-color);
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: var(--base-color);
+
+  position: absolute; /* Possui uma posição absoluta em relação ao elemento pai mais próximo que detém posição relativa */
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden; /* Torna os links do menu inacessíveis, não clicáveis */
+}
+
+/* SHOW MENU */
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background-color: var(--body-color);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed; /* Cria uma nova camada ("linha") na página */
+  top: 0;
+  left: 0;
+
+  display: grid;
+  place-content: center; /* Centraliza os elementos em todas as direções */
+}
+
+nav.show ul.grid {
+  gap: 4rem;
 }
 
 /* ============= HOME ============= */
