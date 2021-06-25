@@ -45,6 +45,10 @@ img {
 } /* As variáveis (sempre seguindo a sintaxe acima) apenas podem ser acessadas dentro dos elementos que são criadas, por isso, são comumente colocadas em :root */
 
 /* ============= BASE ============= */
+html {
+  scroll-behavior: smooth; /* Habilita a rolagem suave da página */
+}
+
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
@@ -79,8 +83,17 @@ body {
   height: 1px;
   background: linear-gradient(
     270deg,
-    hsla(var(--hue), 36%, 57%, 1) 0%,
-    hsla(var(--hue), 65%, 88%, 0.34) 100%
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
   );
 }
 
@@ -99,6 +112,18 @@ body {
   padding: 5rem 0;
 }
 
+.section .title {
+  margin-bottom: 1rem;
+}
+
+.section header {
+  margin-bottom: 4rem;
+}
+
+.section header strong {
+  color: var(--base-color);
+}
+
 #header {
   border-bottom: 1px solid #e4e4e4;
   display: flex;
@@ -109,6 +134,10 @@ body {
   z-index: 100;
   background-color: var(--body-color);
   width: 100%;
+}
+
+#header.scroll {
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.15);
 }
 
 main {
@@ -167,6 +196,13 @@ nav ul li a:hover::after {
 nav .menu {
   opacity: 0;
   visibility: hidden; /* Torna os links do menu inacessíveis, não clicáveis */
+
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none;
 }
 
 /* SHOW MENU */
@@ -187,6 +223,10 @@ nav.show .menu {
   place-content: center; /* Centraliza os elementos em todas as direções */
 }
 
+nav.show .menu ul {
+  display: grid;
+}
+
 nav.show ul.grid {
   gap: 4rem;
 }
@@ -203,13 +243,17 @@ nav .icon-close {
   visibility: hidden;
 
   position: absolute;
+  top: -1.5rem;
   right: 1.5rem;
-  /* Transition */
+
+  transition: 0.2s;
 }
 
 nav.show div.icon-close {
   opacity: 1;
   visibility: visible;
+
+  top: 1.5rem;
 }
 
 /* ============= HOME ============= */
@@ -253,10 +297,69 @@ nav.show div.icon-close {
   text-align: center;
 }
 
-#home .text h1 {
-  margin-bottom: 1rem;
-}
-
 #home .text p {
   margin-bottom: 2rem;
+}
+
+/* ============= ABOUT ============= */
+#about {
+  background-color: white;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .image {
+  position: relative;
+}
+
+#about .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: var(--base-color-second);
+  position: absolute;
+  top: -8.4%;
+  left: -33%;
+  z-index: 0;
+}
+
+#about .image img {
+  position: relative;
+}
+
+#about .image img,
+#about .image::before {
+  border-radius: 0.25rem;
+}
+
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/* ============= SERVICES ============= */
+.cards.grid {
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
 }
