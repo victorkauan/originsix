@@ -191,6 +191,27 @@ nav.show ul.grid {
   gap: 4rem;
 }
 
+/* TOGGLE MENU */
+.toggle {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+nav .icon-close {
+  opacity: 0;
+  visibility: hidden;
+
+  position: absolute;
+  right: 1.5rem;
+  /* Transition */
+}
+
+nav.show div.icon-close {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* ============= HOME ============= */
 #home {
   overflow: hidden; /* "overflow" significa "transbordar". Essa propriedade aplica uma estilização aos elementos que ultrapassam as caixas que estão contidos */
