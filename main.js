@@ -26,7 +26,18 @@ window.addEventListener('scroll', function () {
     // Scroll is greater than header height
     header.classList.add('scroll')
   } else {
-    // Scroll is less than header height
+    // Scroll is lower than header height
     header.classList.remove('scroll')
   }
+})
+
+// Testimonials carousel/slider (Swiper)
+const swiper = new Swiper('.swiper-container', {
+  // The "new" operator creates a JavaScript object
+  slidesPerView: 1, // Number of slides viewed at a time
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  mousewheel: true, // The mouse wheel passes the slides
+  keyboard: true // Keyboard arrows move slides
 })

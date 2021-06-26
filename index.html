@@ -1,45 +1,52 @@
-<!-- Toda página precisa de um índice (arquivo primáro), por isso, o nome do arquivo é "index.html" -->
+<!-- Every page needs an index (primary file), so the filename is "index.html" -->
 <!DOCTYPE html>
-<!-- Define o documento como um HTML5, versão mais moderna -->
+<!-- Defines the document as an HTML5, newer version -->
 <html lang="pt_BR">
-  <!-- A propriedade "lang" da tag root ("raiz"), início do documento, determina o idioma do arquivo HTML -->
+  <!-- The "lang" property of the root ("root") tag, beginning of the document, determines the language of the HTML file -->
   <head>
     <!-- PAGE INFO -->
-    <!-- Informações da própria página, metaconfigurações -->
+    <!-- Info of the page itself, metasettings -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Define que a largura do viewport recebe a largura do dispositivo, além de manter a escala de 1.0, assim tornando o documento flexível para qualquer dispositivo  -->
-    <!-- Viewport é a tela visível baseada na largura e altura de um dispositivo -->
+    <!-- Defines the width of the viewport to receive the width of the device, in addition to keeping the scale of 1.0, thus making the document flexible for any device -->
+    <!-- Viewport is the visible screen based on the width and height of a device -->
     <title>OriginSix</title>
-    <!-- Título da janela -->
+    <!-- Window title -->
 
     <!-- ICONS -->
     <link rel="stylesheet" href="assets/fonts/style.css" />
 
+    <!-- SWIPER -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- The ".min" indicates that the is a minified, shortened file -->
+
     <!-- STYLES -->
     <link rel="stylesheet" href="style.css" />
-    <!-- A propriedade "rel" indica o relacionamento da referência, "href", com o link -->
+    <!-- The property "rel" indicates the relationship of the reference, "href", with the link -->
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <!-- "preconnect" indica que a conexão com a referência vai ser realizada durante o carregamento da página -->
+    <!-- "preconnect" indicates that the connection to the reference will be made during page load -->
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!-- Conteúdo visível (corpo) da página, comentários não são aparentes -->
+    <!-- Visible content (body) of the page, comments are not apparent -->
     <header id="header">
-      <!-- ID é um identificador único -->
+      <!-- ID is a unique identifier -->
       <nav class="container">
-        <!-- Dentro de uma barra de navegação, "nav", estão localizados os elementos clicáveis  -->
+        <!-- Inside a navigation bar, "nav", clickable elements are located -->
         <a class="logo" href="#">beauty<span>salon</span>.</a>
-        <!-- É possível possuir mais de um elemento com a mesma classe, diferente do ID -->
+        <!-- It is possible to have more than one element with the same class, different from the ID -->
         <div class="menu">
           <ul class="grid">
-            <!-- Lista não ordenada -->
-            <!-- Items da lista, cada "li" corresponde a um item -->
+            <!-- Unordered list -->
+            <!-- List items, each "li" corresponds to an item -->
             <li><a class="title" href="#home">Início</a></li>
             <li><a class="title" href="#about">Sobre</a></li>
             <li><a class="title" href="#services">Serviços</a></li>
@@ -53,11 +60,12 @@
     </header>
 
     <main>
+      <!-- HOME -->
       <section class="section" id="home">
-        <!-- Uma dica de acessibilidade é descrever as imagens adicionadas na propriedade "alt" -->
-        <!-- Algumas tags HTML não possuem tag de fechamento por não possuírem conteúdo, apenas atributos. Elas fecham nelas mesmas, como no caso de "img" -->
+        <!-- An accessibility tip is to describe the images added to the "alt" property -->
+        <!-- Some HTML tags do not have a closing tag as they have no content, only attributes. They close on themselves, as in the case of "img" -->
         <div class="container grid">
-          <!-- Para adicionar novas classes é preciso adicionar o nome dela separado por espaços -->
+          <!-- To add new classes you must add their name separated by spaces -->
           <div class="image">
             <img
               src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
@@ -77,6 +85,7 @@
 
       <div class="divider-1"></div>
 
+      <!-- ABOUT -->
       <section class="section" id="about">
         <div class="container grid">
           <div class="image">
@@ -115,6 +124,7 @@
 
       <div class="divider-2"></div>
 
+      <!-- SERVICES -->
       <section class="section" id="services">
         <div class="container grid">
           <header>
@@ -154,8 +164,87 @@
           </div>
         </div>
       </section>
+
+      <div class="divider-1"></div>
+
+      <!-- TESTIMONIALS -->
+      <section class="section" id="testimonials">
+        <div class="container">
+          <header>
+            <h2 class="title">Depoimentos de quem já passou por aqui</h2>
+          </header>
+          <div class="testimonials swiper-container">
+            <div class="swiper-wrapper">
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>Eu sou cliente do Beautysalon há 5 anos
+                    e não troco por nada! Certamente meu cabelo mudou muito
+                    depois que comecei a tratar somente com produtos naturais e
+                    veganos. São profissionais incríveis e qualificados.
+                  </p>
+                  <cite>
+                    <img
+                      src="assets/pictures/wanessa.jpg"
+                      alt="Foto de Wanessa Souza"
+                    />
+                    Wanessa Souza
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>Eu sou cliente do Beautysalon há 5 anos
+                    e não troco por nada! Certamente meu cabelo mudou muito
+                    depois que comecei a tratar somente com produtos naturais e
+                    veganos. São profissionais incríveis e qualificados.
+                  </p>
+                  <cite>
+                    <img
+                      src="assets/pictures/franciele.jpg"
+                      alt="Foto de Franciele Venega"
+                    />
+                    Franciele Venega
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>Eu sou cliente do Beautysalon há 5 anos
+                    e não troco por nada! Certamente meu cabelo mudou muito
+                    depois que comecei a tratar somente com produtos naturais e
+                    veganos. São profissionais incríveis e qualificados.
+                  </p>
+                  <cite>
+                    <img
+                      src="assets/pictures/valeska.jpg"
+                      alt="Foto de Valeska Fabris"
+                    />
+                    Valeska Fabris
+                  </cite>
+                </blockquote>
+              </div>
+            </div>
+            <!-- SLIDER PAGINATION -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+
+      <!-- CONTACT -->
     </main>
 
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- The Swiper file must be added before the "main.js" as it needs Swiper to execute a few lines of code -->
+
+    <!-- MAIN.JS -->
     <script src="main.js"></script>
   </body>
 </html>

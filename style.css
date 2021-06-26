@@ -1,11 +1,11 @@
-/* Tipos de valores de cor:
- - rgb = Vermelho, verde e azul;
- - rgba = Vermelho, verde, azul e alfa;
- - #FFFFFF = Hexadecimal;
- - hsl = Matiz, saturação and luminosidade;
- - hsla = Matiz, saturação, luminosidade e alfa;
- - red, green, blue = Nomes de cores.
- */
+/* Types of color values:
+  - rgb = Red, green and blue;
+  - rgba = Red, green, blue and alpha;
+  - #FFFFFF = Hexadecimal;
+  - hsl = Hue, saturation and luminosity;
+  - hsla = Hue, saturation, luminosity and alpha;
+  - red, green, blue = Color names.
+*/
 
 /* ============= RESET ============= */
 * {
@@ -13,14 +13,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* "*" é o seletor universal */
+/* "*" is the universal selector */
 
 ul {
   list-style: none;
 }
 
 a {
-  text-decoration: none; /* Remove as linhas presentes nos links */
+  text-decoration: none; /* Remove lines present in links */
 }
 
 img {
@@ -42,19 +42,19 @@ img {
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
-} /* As variáveis (sempre seguindo a sintaxe acima) apenas podem ser acessadas dentro dos elementos que são criadas, por isso, são comumente colocadas em :root */
+} /* Variables (always following the syntax above) can only be accessed within the elements that are created, so they are commonly placed in :root */
 
 /* ============= BASE ============= */
 html {
-  scroll-behavior: smooth; /* Habilita a rolagem suave da página */
+  scroll-behavior: smooth; /* Enable smooth page scrolling */
 }
 
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
   background-color: var(--body-color);
-  -webkit-font-smoothing: antialiased; /* Propriedades com vendor prefixes apenas são aplicadas em navegadores compatíveis */
-} /* Para acessar o valor de uma variável é preciso colocar "var" seguido do nome da variável entre parênteses */
+  -webkit-font-smoothing: antialiased; /* Properties with vendor prefixes are only applied in supported browsers */
+} /* To access the value of a variable, put "var" followed by the variable name in parentheses */
 
 .title {
   font: 700 1.875rem 'Poppins', sans-serif;
@@ -72,7 +72,7 @@ body {
   color: var(--text-color-light);
   font: 500 1rem 'Dm Sans', sans-serif;
   transition: background-color 0.3s;
-  /* A tag "a", por padrão, possui o display "inline", dado isso, ela não recebe valores de altura e largura que ultrapassem o tamanho do conteúdo. */
+  /* The "a" tag, by default, has the "inline" display, as it does not receive height and width values that exceed the size of the content. */
 }
 
 .button:hover {
@@ -104,7 +104,7 @@ body {
 }
 
 .grid {
-  display: grid; /* Habilita novas propriedades CSS */
+  display: grid; /* Enable new CSS properties */
   gap: 2rem;
 }
 
@@ -158,8 +158,8 @@ main {
 nav {
   height: var(--header-height);
   display: flex;
-  align-items: center; /* Define o alinhamento horizontal */
-  justify-content: space-between; /* Define o alinhamento vertical */
+  align-items: center; /* Set the horizontal alignment */
+  justify-content: space-between; /* Set vertical alignment */
   width: 100%;
 }
 
@@ -182,7 +182,7 @@ nav ul li a::after {
   height: 2px;
   background-color: var(--base-color);
 
-  position: absolute; /* Possui uma posição absoluta em relação ao elemento pai mais próximo que detém posição relativa */
+  position: absolute; /* Has an absolute position relative to the closest parent element that holds relative position */
   left: 0;
   bottom: -1.5rem;
 
@@ -195,7 +195,7 @@ nav ul li a:hover::after {
 
 nav .menu {
   opacity: 0;
-  visibility: hidden; /* Torna os links do menu inacessíveis, não clicáveis */
+  visibility: hidden; /* Makes menu links inaccessible, not clickable */
 
   top: -20rem;
   transition: 0.2s;
@@ -215,12 +215,12 @@ nav.show .menu {
   height: 100vh;
   width: 100vw;
 
-  position: fixed; /* Cria uma nova camada ("linha") na página */
+  position: fixed; /* Creates a new layer ("line") on the page */
   top: 0;
   left: 0;
 
   display: grid;
-  place-content: center; /* Centraliza os elementos em todas as direções */
+  place-content: center; /* Centers elements in all directions */
 }
 
 nav.show .menu ul {
@@ -258,7 +258,7 @@ nav.show div.icon-close {
 
 /* ============= HOME ============= */
 #home {
-  overflow: hidden; /* "overflow" significa "transbordar". Essa propriedade aplica uma estilização aos elementos que ultrapassam as caixas que estão contidos */
+  overflow: hidden; /* This property applies a styling to elements that go beyond the boxes that are contained */
 }
 
 #home .container {
@@ -270,19 +270,19 @@ nav.show div.icon-close {
 }
 
 #home .image::before {
-  /* Através do "::before" ou do "::after" é possível criar um elemento "fantasma" no CSS, essa criação é chamada de sudo element */
+  /* Through "::before" or "::after" it is possible to create a "ghost" element in CSS, this creation is called sudo element */
   content: '';
   height: 100%;
   width: 100%;
   background-color: var(--base-color-second);
-  position: absolute; /* O elemento é posicionado com base no tamanho da página inteira */
+  position: absolute; /* The element is positioned based on the size of the entire page */
   top: -16.8%;
   left: 16.7%;
-  z-index: 0; /* Eixo de profundidade, o elemento com maior índice é colocado na frente dos elementos de menor índice */
+  z-index: 0; /* Depth axis, element with highest index is placed in front of elements with lowest index */
 }
 
 #home .image img {
-  position: relative; /* Habilita novas propriedades CSS, como "top", "right", "left" e "bottom" */
+  position: relative; /* Enables new CSS properties such as "top", "right", "left" and "bottom" */
   right: 2.9375rem;
 }
 
@@ -362,4 +362,66 @@ nav.show div.icon-close {
 .card .title {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
+}
+
+/* ============= TESTIMONIALS ============= */
+#testimonials {
+  background-color: white;
+}
+
+#testimonials .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#testimonials header {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+#testimonials blockquote {
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.25rem;
+}
+
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--title-color);
+}
+
+#testimonials blockquote p span {
+  font: 700 2.5rem serif;
+  color: var(--base-color);
+
+  position: absolute;
+  top: -0.375rem;
+  left: -1.875rem;
+}
+
+#testimonials cite {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+#testimonials cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover; /* Fits the image to the given size by covering the excess space */
+  clip-path: circle(); /* Creates a mask (crop) on the circle-shaped image */
+  margin-right: 0.5rem;
+}
+
+/* SWIPER */
+.swiper-slide {
+  height: auto;
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--base-color);
 }
