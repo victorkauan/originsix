@@ -41,3 +41,24 @@ const swiper = new Swiper('.swiper-container', {
   mousewheel: true, // The mouse wheel passes the slides
   keyboard: true // Keyboard arrows move slides
 })
+
+// Show elements as they are viewed (ScrollReveal)
+const scrollReveal = ScrollReveal({
+  origin: 'top',
+  distance: '30px',
+  duration: 700, // Animation duration in milliseconds
+  reset: true // Reset the elements already loaded, thus always showing the animation again
+})
+
+scrollReveal.reveal(
+  `
+#home .image, #home .text,
+#about .image, #about .text,
+#services header, #services .card,
+#testimonials header, #testimonials .testimonials,
+#contact .text, #contact .links
+`,
+  {
+    interval: 100
+  }
+)
