@@ -183,7 +183,8 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--base-color);
 }
 
@@ -200,13 +201,14 @@ nav ul li a::after {
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   width: 100%;
 }
 
 nav .menu {
   opacity: 0;
-  visibility: hidden; /* Makes menu links inaccessible, not clickable */
+  visibility: hidden; /* Make menu links inaccessible, not clickable */
 
   top: -20rem;
   transition: 0.2s;
@@ -226,12 +228,12 @@ nav.show .menu {
   height: 100vh;
   width: 100vw;
 
-  position: fixed; /* Creates a new layer ("line") on the page */
+  position: fixed; /* Create a new layer ("line") on the page */
   top: 0;
   left: 0;
 
   display: grid;
-  place-content: center; /* Centers elements in all directions */
+  place-content: center; /* Center elements in all directions */
 }
 
 nav.show .menu ul {
@@ -293,7 +295,7 @@ nav.show div.icon-close {
 }
 
 #home .image img {
-  position: relative; /* Enables new CSS properties such as "top", "right", "left" and "bottom" */
+  position: relative; /* Enable new CSS properties such as "top", "right", "left" and "bottom" */
   right: 2.9375rem;
 }
 
@@ -422,8 +424,8 @@ nav.show div.icon-close {
 #testimonials cite img {
   width: 2rem;
   height: 2rem;
-  object-fit: cover; /* Fits the image to the given size by covering the excess space */
-  clip-path: circle(); /* Creates a mask (crop) on the circle-shaped element */
+  object-fit: cover; /* Fit the image to the given size by covering the excess space */
+  clip-path: circle(); /* Create a mask (crop) on the circle-shaped element */
   margin-right: 0.5rem;
 }
 
@@ -487,7 +489,7 @@ footer i {
 
 footer .social {
   grid-auto-flow: column;
-  width: fit-content; /* Adjusts the width of the box according to its content */
+  width: fit-content; /* Adjust the width of the box according to its content */
 }
 
 footer .social a {
@@ -520,7 +522,7 @@ footer .social a:hover {
   transition: 0.3s;
   transform: translateY(
     100%
-  ); /* The transform property accepts several other attributes as a value. "translateY" is used to move an object along the y-axis. */
+  ); /* The "transform" property accepts several other attributes as a value. "translateY" is used to move an object along the y-axis. */
 }
 
 .back-to-top.show {
@@ -575,6 +577,12 @@ footer .social a:hover {
 
   nav .menu ul li a.title {
     font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
   }
 
   nav .icon-menu {
