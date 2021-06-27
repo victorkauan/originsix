@@ -46,6 +46,9 @@ img {
   /* Fonts */
   --text-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
+
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
 } /* Variables (always following the syntax above) can only be accessed within the elements that are created, so they are commonly placed in :root */
 
 /* ============= BASE ============= */
@@ -54,14 +57,14 @@ html {
 }
 
 body {
-  font: 400 1rem 'DM Sans', sans-serif;
+  font: 400 1rem var(--body-font);
   color: var(--text-color);
   background-color: var(--body-color);
   -webkit-font-smoothing: antialiased; /* Properties with vendor prefixes are only applied in supported browsers */
 } /* To access the value of a variable, put "var" followed by the variable name in parentheses */
 
 .title {
-  font: 700 var(--text-font-size) 'Poppins', sans-serif;
+  font: 700 var(--text-font-size) var(--title-font);
   color: var(--title-color);
   -webkit-font-smoothing: auto;
 }
@@ -74,7 +77,7 @@ body {
   padding: 0 2rem;
   border-radius: 0.25rem;
   color: var(--text-color-light);
-  font: 500 1rem 'Dm Sans', sans-serif;
+  font: 500 1rem var(--body-font);
   transition: background-color 0.3s;
   /* The "a" tag, by default, has the "inline" display, as it does not receive height and width values that exceed the size of the content. */
 }
@@ -150,7 +153,7 @@ body {
 
 /* ============= LOGO ============= */
 .logo {
-  font: 700 1.3125rem 'Poppins', sans-serif;
+  font: 700 1.3125rem var(--title-font);
   color: var(--title-color);
 }
 
@@ -531,8 +534,117 @@ footer .social a:hover {
 /* MEDIA QUERIES */
 /* - Large (lg): 1200 > */
 @media (min-width: 1200px) {
+  /* LAYOUT */
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header,
+  #testimonials header {
+    max-width: 33rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 3.125rem;
+  }
+
   main {
     margin-top: var(--header-height);
+  }
+
+  /* NAVIGATION */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /* HOME */
+  #home .container {
+    margin-left: auto;
+    margin-right: auto;
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+
+  #home .image {
+    order: 1;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 25rem;
+    text-align: left;
+  }
+
+  /* ABOUT */
+  #about .container {
+    margin-left: auto;
+    margin-right: auto;
+    grid-auto-flow: column;
+  }
+
+  /* SERVICES */
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr; /* Determines the number of columns and their size for an element with grid display */
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* TESTIMONIALS */
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* CONTACT */
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  #contact .text {
+    max-width: 25rem;
+  }
+
+  /* FOOTER */
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
   }
 }
 /* - Medium (md): 1023 > */

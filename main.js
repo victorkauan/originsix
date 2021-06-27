@@ -39,7 +39,13 @@ const swiper = new Swiper('.swiper-container', {
     el: '.swiper-pagination'
   },
   mousewheel: true, // The mouse wheel passes the slides
-  keyboard: true // Keyboard arrows move slides
+  keyboard: true, // Keyboard arrows move slides
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true // Sets the wrapper size to fixed, thus always showing the defined amount of slides
+    }
+  }
 })
 
 // Show elements as they are viewed (ScrollReveal)
